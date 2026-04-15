@@ -97,7 +97,7 @@ async def on_message(message):
         strikes[user_id] = strikes.get(user_id, 0) + 1
         save_strikes(strikes)
         await message.channel.send(
-            f"{message.author.mention} used a banned word! Strike {strikes[user_id]}/3"
+            f"{message.author.mention} baned word {strikes[user_id]}/3"
         )
         log_event(message.author.name, message.content, "banned_word")
         await mute_user(message.author, message.channel)
